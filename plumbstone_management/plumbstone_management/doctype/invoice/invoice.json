@@ -1,0 +1,240 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-07-09 18:15:23.885666",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_jf1d",
+  "invoice_no",
+  "invoice_date",
+  "column_break_rite",
+  "invoice_type",
+  "section_break_s76p",
+  "company_column",
+  "company_name",
+  "company_gstin",
+  "company_phone",
+  "company_address",
+  "company_email",
+  "customer_column",
+  "customer_name",
+  "customer_gstin",
+  "customer_phone",
+  "customer_address",
+  "customer_email",
+  "section_break_maqe",
+  "items",
+  "section_break_yili",
+  "gst_type",
+  "gst_percentage",
+  "invoice_terms",
+  "column_break_onok",
+  "item_total",
+  "tax_amount",
+  "item_round_off_amount",
+  "item_grand_total",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_jf1d",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "invoice_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Invoice Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "invoice_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Invoice Type",
+   "options": "Quotation\nTax Invoice\nChallan",
+   "reqd": 1
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Invoice Item"
+  },
+  {
+   "default": "0",
+   "fieldname": "item_total",
+   "fieldtype": "Read Only",
+   "label": "Total"
+  },
+  {
+   "default": "0.00",
+   "fieldname": "item_round_off_amount",
+   "fieldtype": "Read Only",
+   "label": "Round Off Amount"
+  },
+  {
+   "default": "0.00",
+   "fieldname": "item_grand_total",
+   "fieldtype": "Read Only",
+   "label": "Grand Total"
+  },
+  {
+   "fieldname": "invoice_terms",
+   "fieldtype": "Table",
+   "label": "Terms & Conditions",
+   "options": "Invoice Term"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Invoice",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "invoice_no",
+   "fieldtype": "Data",
+   "label": "Invoice no",
+   "reqd": 1
+  },
+  {
+   "default": "Plumbstone Corporation",
+   "fieldname": "company_name",
+   "fieldtype": "Link",
+   "label": "Company Name",
+   "options": "Company"
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Link",
+   "label": "Customer Name",
+   "options": "Customer"
+  },
+  {
+   "fetch_from": "company_name.company_gstin",
+   "fieldname": "company_gstin",
+   "fieldtype": "Data",
+   "label": "GSTIN"
+  },
+  {
+   "fetch_from": "customer_name.customer_gstin",
+   "fieldname": "customer_gstin",
+   "fieldtype": "Data",
+   "label": "GSTIN"
+  },
+  {
+   "fetch_from": "company_name.company_email",
+   "fieldname": "company_email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fetch_from": "customer_name.customer_email",
+   "fieldname": "customer_email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fetch_from": "company_name.company_phone",
+   "fieldname": "company_phone",
+   "fieldtype": "Data",
+   "label": "Phone Number"
+  },
+  {
+   "fetch_from": "customer_name.customer_phone",
+   "fieldname": "customer_phone",
+   "fieldtype": "Data",
+   "label": "Phone Number"
+  },
+  {
+   "fieldname": "section_break_maqe",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_s76p",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "company_column",
+   "fieldtype": "Column Break",
+   "label": "Company"
+  },
+  {
+   "fieldname": "customer_column",
+   "fieldtype": "Column Break",
+   "label": "Customer"
+  },
+  {
+   "fieldname": "section_break_yili",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_onok",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_rite",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gst_type",
+   "fieldtype": "Select",
+   "label": "GST Type",
+   "options": "SGST + CGST\nIGST"
+  },
+  {
+   "fieldname": "gst_percentage",
+   "fieldtype": "Select",
+   "label": "GST Percentage ",
+   "options": "18%\n12%"
+  },
+  {
+   "default": "0.00",
+   "fieldname": "tax_amount",
+   "fieldtype": "Read Only",
+   "label": "Total tax amount"
+  },
+  {
+   "fetch_from": "company_name.company_address",
+   "fieldname": "company_address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fetch_from": "customer_name.customer_address",
+   "fieldname": "customer_address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-07-15 17:00:26.804160",
+ "modified_by": "Administrator",
+ "module": "Plumbstone Management",
+ "name": "Invoice",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

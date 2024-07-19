@@ -1,0 +1,111 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:invoice_name",
+ "creation": "2024-07-10 15:01:35.949729",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_jf1d",
+  "naming_series",
+  "invoice_date",
+  "invoice_type",
+  "invoice_terms",
+  "column_break_apoa",
+  "items",
+  "item_total",
+  "item_round_off_amount",
+  "item_grand_total",
+  "amended_from",
+  "invoices"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_jf1d",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Read Only",
+   "label": "Invoice no",
+   "reqd": 1
+  },
+  {
+   "fieldname": "invoice_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Invoice Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "invoice_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Invoice Type",
+   "options": "Quotation\nTax Invoice\nChallan",
+   "reqd": 1
+  },
+  {
+   "fieldname": "invoice_terms",
+   "fieldtype": "Table",
+   "label": "Terms & Conditions",
+   "options": "Term"
+  },
+  {
+   "fieldname": "column_break_apoa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Invoice Item"
+  },
+  {
+   "default": "0",
+   "fieldname": "item_total",
+   "fieldtype": "Read Only",
+   "label": "Total"
+  },
+  {
+   "fieldname": "item_round_off_amount",
+   "fieldtype": "Read Only",
+   "label": "Round Off Amount"
+  },
+  {
+   "fieldname": "item_grand_total",
+   "fieldtype": "Read Only",
+   "label": "Grand Total"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Work Order Invoice",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "invoices",
+   "fieldtype": "Link",
+   "label": "Invoice",
+   "options": "Invoice"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-07-10 15:17:03.875654",
+ "modified_by": "Administrator",
+ "module": "Plumbstone Management",
+ "name": "Work Order Invoice",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

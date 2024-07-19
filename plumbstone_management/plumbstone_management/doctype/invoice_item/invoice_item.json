@@ -1,0 +1,77 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:item_name",
+ "creation": "2024-07-09 18:31:25.550869",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_0udg",
+  "item_name",
+  "item_hsn_code",
+  "measurement",
+  "item_qty",
+  "item_price",
+  "item_amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_0udg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "item_name",
+   "fieldtype": "Link",
+   "label": "Item Name",
+   "options": "Item",
+   "unique": 1
+  },
+  {
+   "fetch_from": "item_name.item_hsn_code",
+   "fieldname": "item_hsn_code",
+   "fieldtype": "Data",
+   "label": "Item HSN Code"
+  },
+  {
+   "fetch_from": "item_name.measurement",
+   "fieldname": "measurement",
+   "fieldtype": "Data",
+   "label": "Measurement"
+  },
+  {
+   "fieldname": "item_qty",
+   "fieldtype": "Int",
+   "label": "Item Quantity"
+  },
+  {
+   "fetch_from": "item_name.item_price",
+   "fieldname": "item_price",
+   "fieldtype": "Float",
+   "label": "Item Price"
+  },
+  {
+   "bold": 1,
+   "default": "0.00",
+   "fieldname": "item_amount",
+   "fieldtype": "Float",
+   "label": "Item Amount",
+   "non_negative": 1,
+   "precision": "0",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-07-11 15:01:01.855473",
+ "modified_by": "Administrator",
+ "module": "Plumbstone Management",
+ "name": "Invoice Item",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,50 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:term_name",
+ "creation": "2024-07-11 15:18:03.947305",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_pek6",
+  "term_name",
+  "term_description"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_pek6",
+   "fieldtype": "Section Break",
+   "label": "Term & Condition Detail"
+  },
+  {
+   "fieldname": "term_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Term Name",
+   "options": "Term",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "term_name.term_description",
+   "fieldname": "term_description",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Term Description",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-07-11 15:18:31.477551",
+ "modified_by": "Administrator",
+ "module": "Plumbstone Management",
+ "name": "Invoice Term",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
